@@ -10,14 +10,14 @@ export function useNavigationHeight<T extends HTMLElement = HTMLElement>() {
       setHeightState(ref.current.offsetHeight - window.scrollY);
     }
   };
-  useEffect(() => {
-    setHeight();
-    setTimeout(setHeight, 100); // Some lag sometimes
-    const handleScroll = () => setHeight();
-    window.addEventListener('scroll', handleScroll);
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, [ref, transitionState]);
+  // useEffect(() => {
+  //   setHeight();
+  //   setTimeout(setHeight, 100); // Some lag sometimes
+  //   const handleScroll = () => setHeight();
+  //   window.addEventListener('scroll', handleScroll);
+  //   return () => {
+  //     window.removeEventListener('scroll', handleScroll);
+  //   };
+  // }, [ref, transitionState]);
   return { ref, height };
 }

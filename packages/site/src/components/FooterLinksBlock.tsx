@@ -3,6 +3,7 @@ import { Link } from '@remix-run/react';
 import { ArrowLeftIcon, ArrowRightIcon } from '@heroicons/react/24/outline';
 import type { FooterLinks, NavigationLink } from '../types';
 import { useUrlbase, withUrlbase } from '@myst-theme/providers';
+import { useEffect, useState } from 'react';
 
 const FooterLink = ({ title, url, group, right }: NavigationLink & { right?: boolean }) => {
   const urlbase = useUrlbase();
